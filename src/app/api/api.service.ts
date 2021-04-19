@@ -1,6 +1,7 @@
 import { HttpClient } from "@angular/common/http";
 import { Injectable } from "@angular/core";
 import { Observable } from "rxjs";
+import { SongResponse } from "../song/song.model";
 
 @Injectable({
   providedIn: "root"
@@ -8,8 +9,8 @@ import { Observable } from "rxjs";
 export class ApiService {
   constructor(private http: HttpClient) {}
 
-  searchSongs(apiKey: string, language: string): Observable<MovieResponse> {
-    const path = `https://api.themoviedb.org/3/movie/popular?language=${language}&api_key=${apiKey}`;
-    return this.http.get<MovieResponse>(path);
+  searchSongs(search: string, media: string): Observable<SongResponse> {
+    const path = `https://itunes.apple.com/search?term=${search}&media=${media}`;
+    return this.http.get<SongResponse>(path);
   }
 }
