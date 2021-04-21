@@ -4,6 +4,7 @@ import { SongComponent } from "./song.component";
 
 @NgModule({
   declarations: [SongComponent],
+  exports: [SongComponent],
   imports: [CommonModule]
 })
 export class SongModule {}
