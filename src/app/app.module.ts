@@ -8,15 +8,17 @@ import { HelloComponent } from "./hello.component";
 import { ApiService } from "./api/api.service";
 import { SongComponent } from "./song/song.component";
 import { HttpClientModule } from "@angular/common/http";
+import { AppRoutingModule } from "./app-routing.module";
 
 @NgModule({
   imports: [
     BrowserModule,
     FormsModule,
     IonicModule.forRoot(),
-    HttpClientModule
+    HttpClientModule,
+    AppRoutingModule
   ],
-  declarations: [AppComponent, HelloComponent, SongComponent],
+  declarations: [AppComponent, ],
   bootstrap: [AppComponent],
   providers: [ApiService]
 })
