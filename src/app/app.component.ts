@@ -2,6 +2,8 @@ import { Component } from "@angular/core";
 import { AlertController } from "@ionic/angular";
 import { ApiService } from "./api/api.service";
 import { SongResponse } from "./song/song.model";
+import { Router } from "@angular/router"
+
 @Component({
   selector: "my-app",
   templateUrl: "./app.component.html",
@@ -31,6 +33,7 @@ export class AppComponent {
     const media = "musicVideo"; // Or movie
     this.api.searchSongs(artist, media).subscribe(
       (data: SongResponse) => {
+
         console.log("Data", data);
         console.log("Data", data.results[0]);
       },

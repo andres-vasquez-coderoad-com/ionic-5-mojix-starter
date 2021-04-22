@@ -8,19 +8,19 @@
   </ion-toolbar>
 </ion-header>
 <ion-content>
-  <ion-searchbar></ion-searchbar>
+  <ion-searchbar (ionChange)="searchArtist($event)"></ion-searchbar>
   <ion-list>
-    <ion-item>
-      <ion-label>Pokémon Yellow</ion-label>
-    </ion-item>
-    <ion-item>
-      <ion-label>Mega Man X</ion-label>
-    </ion-item>
-    <ion-item>
-      <ion-label>The Legend of Zelda</ion-label>
-    </ion-item>
-    <ion-item>
-      <ion-label>Pac-Man</ion-label>
+    <ion-item *ngFor="let soung of soungs; #i = index" data-index="#i">
+      <ion-card color="$index%2 != 0 ? 'lightgrey' : 'grey'">
+        <ion-img [src]="soung.artworkUrl100"></ion-img>
+        <ion-card-header>
+          <ion-label>{{soung.artistName}}</ion-label>
+        </ion-card-header>
+        <ion-card-content>
+          <ion-label>{{soung.trackName}}</ion-label>
+        </ion-card-content>
+        <ion-label>{{soung.trackPrice}} {{soung.currency}}</ion-label>
+      </ion-card>
     </ion-item>
   </ion-list>
 </ion-content>
